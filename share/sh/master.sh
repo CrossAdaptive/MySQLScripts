@@ -225,7 +225,7 @@ function Backup()
 
 function Install()
 {
-    local flags="$1 $2"
+    local flags="$1 $2 --skip-comments"
 
     echo "create database ${DB_NAME}; use ${DB_NAME};  | cat - ${DB_INSTALL} ${DB_BACKUP} | ${MYSQL} ${flags} $EXTRA_FLAGS"
     echo "create database ${DB_NAME}; use ${DB_NAME};" | cat - ${DB_INSTALL} ${DB_BACKUP} | ${MYSQL} ${flags} $EXTRA_FLAGS
